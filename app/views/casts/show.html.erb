@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Movie</dt>
-      <dd><%= @cast.movie_id %></dd>
+      <dd>
+        <% if @cast.movie.present? %>
+          <a href="/movies/<%= @cast.movie_id %>">
+            <%= @cast.movie.movie_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Actor</dt>
-      <dd><%= @cast.actor_id %></dd>
+      <dd>
+        <% if @cast.actor.present? %>
+          <a href="/actors/<%= @cast.actor_id %>">
+            <%= @cast.actor.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
