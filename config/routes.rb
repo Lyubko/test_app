@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "movies#index"
   # Routes for the Cast resource:
   # CREATE
   get "/casts/new", :controller => "casts", :action => "new"
