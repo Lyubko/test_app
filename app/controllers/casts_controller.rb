@@ -1,6 +1,6 @@
 class CastsController < ApplicationController
   def index
-    @casts = Cast.all
+    @casts = Cast.page(params[:page]).per(10)
 
     render("casts/index.html.erb")
   end
